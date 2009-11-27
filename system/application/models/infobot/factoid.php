@@ -49,7 +49,7 @@ class Factoid extends Model {
 		foreach ($definitions as $definition) {
 			$data = array(
 				'factoid_id' => $id,
-				'body' => str_replace("\n", '\n', $definition),
+				'body' => $definition,
 				'verb' => 'is' );
 			$this->db->insert(DEFINITIONS_TABLE, $data);
 		}
