@@ -57,10 +57,15 @@ code {
 }
 
 label {
-    margin-right: 10px;
+    margin-bottom: 5px;
+    display: block;
+    
+    font-weight: bold;
 }
 
 input {
+    padding: 5px;
+    
     font-size: 14px;
 }
 
