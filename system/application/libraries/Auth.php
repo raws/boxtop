@@ -46,7 +46,7 @@ class Auth {
         return $this->access() <= 0;
     }
     
-    function authorize($required_access = 1) {
+    function authorize($required_access = 1, $redirect = TRUE) {
         $required_access = $this->access_val($required_access);
         $effective_access = 0;
         
@@ -57,18 +57,20 @@ class Auth {
         if ($effective_access >= $required_access) {
             return TRUE;
         } else {
-            if ($effective_access > 0) {
-                // User is logged in, but does not have sufficient access.
-                $this->ci->session->set_flashdata('error', "Oops! You do not have the appropriate access to do that.");
+				if ($redirect) {
+	            if ($effective_access > 0) {
+	                // User is logged in, but does not have sufficient access.
+	                $this->ci->session->set_flashdata('error', "Oops! You do not have the appropriate access to do that.");
                 
-                redirect();
-            } else {
-                // User is not logged in.
-                $this->ci->session->set_flashdata('return', $this->ci->uri->uri_string());
-                $this->ci->session->set_flashdata('error', "Oops! You must log in to do that.");
+	                redirect();
+	            } else {
+	                // User is not logged in.
+	                $this->ci->session->set_flashdata('return', $this->ci->uri->uri_string());
+	                $this->ci->session->set_flashdata('error', "Oops! You must log in to do that.");
                 
-                redirect('login');
-            }
+	                redirect('login');
+	            }
+				}
             
             return FALSE;
         }
@@ -99,3 +101,5 @@ class Auth {
     }
     
 }
+
+?>

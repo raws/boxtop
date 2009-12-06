@@ -32,9 +32,9 @@
 		</ul></li>
 </ul>
 
-<h2>Where to find Wheaties' administrator</h2>
+<h2>Where to find the operator</h2>
 
-<p>If Wheaties goes awry, becomes Skynet or otherwise sentient, or if you have any questions, feel free to get in touch with <b>Raws</b> on any of the above networks. I assume full responsibility for the creation of this monstrosity of an IRC bot, but offer no related disclaimers for his behavior whatsoever.</p>
+<p>If Wheaties goes awry or becomes Skynet, feel free to get in touch with <b>Raws</b> on any of the above networks.</p>
 
 <h2>A bit of history</h2>
 

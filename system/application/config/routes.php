@@ -40,16 +40,13 @@
 |
 */
 
-$route['default_controller'] = "welcome";
-$route['scaffolding_trigger'] = "dong";
+$route['default_controller'] = 'welcome';
+$route['scaffolding_trigger'] = '';
 
-$route['login'] = "session/login";
-$route['logout'] = "session/logout";
+$route['login'] = 'session/login';
+$route['logout'] = 'session/logout';
 
-$route['factoids'] = "infobot";
-$route['factoids/edit/(:num)'] = "infobot/edit/$1";
-$route['factoids/search'] = "infobot/search";
-$route['factoids/update'] = "infobot/update";
+$route['commands/search'] = 'commands/search';
 
 /* End of file routes.php */
 /* Location: ./system/application/config/routes.php */
