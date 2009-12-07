@@ -1,5 +1,6 @@
 <?php $this->load->view('application/header', array('title' => "Search for \"{$query}\"")); ?>
 
+<script src="/javascripts/search/fluidify_search.js" type="text/javascript" charset="utf-8"></script>
 <style type="text/css" media="screen">
 	@import url("/stylesheets/inc.search.css");
 </style>

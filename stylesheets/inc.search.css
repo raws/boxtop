@@ -1,12 +1,16 @@
 #search_results > ol {
-    padding-left: 3%;
+    width: 100%;
+    padding: 0;
     
-    list-style-type: none;
+    list-style: none;
 }
 
 #search_results > ol > li {
-    width: 32%;
+    display: inline;
+    width: 250px;
     margin: 0 5px 5px 0;
+    padding: 0;
+    
     float: left;
 }
 
@@ -26,7 +30,6 @@
 }
 
 #search_results li > a span.type {
-    display: block;
     width: 16px;
     height: 16px;
     float: left;
