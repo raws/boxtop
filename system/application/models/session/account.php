@@ -37,6 +37,22 @@ class Account extends Model {
         }
     }
     
+    function register($username, $password) {
+        $data = array(
+                'username' => $username,
+                'crypted_password' => $this->encrypt($password),
+                'persistence_token' => $this->persistence_token()
+            );
+        
+        $this->db->insert(Account::accounts_table, $data);
+        
+        if ($this->db->affected_rows() > 0) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+    
     function account_by_id($account_id) {
         $query = $this->db->get_where(Account::accounts_table, array('id' => $account_id), 1);
         
@@ -61,6 +77,10 @@ class Account extends Model {
         }
         
         return $digest;
+    }
+    
+    function persistence_token() {
+        return $this->encrypt(rand());
     }
 
 }

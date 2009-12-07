@@ -9,10 +9,7 @@ class Session extends Controller {
 	}
 	
 	function login() {
-	    if ($this->auth->logged_in()) {
-	        $this->session->set_flashdata('error', "You're already logged in!");
-	        redirect();
-	    }
+	    if ($this->auth->logged_in()) { redirect(); }
 	    
 	    if ($username = $this->input->post('username')) {
 	        $data = array();
@@ -38,10 +35,7 @@ class Session extends Controller {
 	}
 	
 	function logout() {
-	    if ($this->auth->logged_out()) {
-	        $this->session->set_flashdata('error', "You're not logged in!");
-	        redirect();
-	    }
+	    if ($this->auth->logged_out()) { redirect(); }
 	    
 	    if ($this->auth->logout()) {
 	        $this->session->set_flashdata('success', "You've been logged out!");
@@ -50,6 +44,40 @@ class Session extends Controller {
 	    }
 	    
 	    redirect();
+	}
+	
+	function register() {
+		if ($this->auth->logged_in()) { redirect(); }
+		
+		$this->load->library('form_validation');
+		
+		if ($this->form_validation->run() == FALSE) {
+			$this->load->view('session/register');
+		} else {
+		    $this->load->model('session/account', 'account');
+		    
+			$username = $this->input->post('username');
+			$password = $this->input->post('password');
+		    
+		    if ($this->account->register($username, $password)) {
+		        $this->session->set_flashdata('success', "You've been successfully registered, {$username}! You may now log in.");
+    			redirect('login');
+		    } else {
+		        $this->session->set_flashdata('error', "Oops! An error occurred while attempting to register you. Please try again!");
+		        $this->load->view('session/register');
+		    }
+		}
+	}
+	
+	function username_check($username) {
+	    $query = $this->db->get_where('session_accounts', array('username' => $username));
+	    
+	    if ($query->num_rows() > 0) {
+	        $this->form_validation->set_message('username_check', "The username \"{$username}\" is already in use.");
+	        return FALSE;
+	    } else {
+	        return TRUE;
+	    }
 	}
 	
 }

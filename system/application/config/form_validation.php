@@ -4,13 +4,18 @@ $config = array(
         'session/register' => array(
                 array(
                     'field' => 'username',
-                    'label' => 'Username',
-                    'rules' => 'required'
+                    'label' => 'username',
+                    'rules' => 'trim|required|min_length[3]|max_length[50]|xss_clean|callback_username_check'
                 ),
                 array(
                     'field' => 'password',
-                    'label' => 'Password',
-                    'rules' => 'required'
+                    'label' => 'password',
+                    'rules' => 'trim|required|min_length[6]'
+                ),
+                array(
+                    'field' => 'password_confirmation',
+                    'label' => 'password confirmation',
+                    'rules' => 'trim|required|matches[password]'
                 )
             )
     );

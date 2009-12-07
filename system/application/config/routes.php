@@ -45,6 +45,7 @@ $route['scaffolding_trigger'] = '';
 
 $route['login'] = 'session/login';
 $route['logout'] = 'session/logout';
+$route['register'] = 'session/register';
 
 $route['search'] = 'help/search';
 $route['search/(:any)'] = 'help/search/$1';

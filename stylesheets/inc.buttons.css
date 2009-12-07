@@ -1,0 +1,25 @@
+a.button:after { padding-left: 7px; }
+
+/* Orange plus sign */
+a.button.add:after {
+    content: "\271A";
+    color: #e9c577;
+}
+
+/* Red X */
+a.button.delete:after {
+    content: "\2718";
+    color: #ffa296;
+}
+
+/* Purple left arrow */
+a.button.revert:after {
+    content: "\2B05";
+    color: #e9ceff;
+}
+
+/* Green checkmark */
+a.button.save:after {
+    content: "\2714";
+    color: #9ce592;
+}

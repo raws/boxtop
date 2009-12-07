@@ -1,4 +1,5 @@
 @import url("/stylesheets/inc.navigation.css");
+@import url("/stylesheets/inc.buttons.css");
 
 /* Common */
 
@@ -91,12 +92,41 @@ h4 {
 
 p { margin: 12px 20px 12px 0; }
 
+/* Forms */
+
+label {
+    display: block;
+    width: 100px;
+    margin-right: 10px;
+    float: left;
+    
+    text-align: right;
+    font-weight: bold;
+    line-height: 2.25em;
+}
+
+input {
+    width: 250px;
+    padding: 3px;
+    
+    font-size: 13px;
+}
+
+input[type=submit] { margin-left: 110px; }
+
+a.button.form {
+    margin-left: 110px;
+}
+
 /* Flash data */
 
 .flash {
     padding: 15px;
     margin-bottom: 15px;
+    
     border: 2px solid;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
 }
 
 .flash.success {
@@ -110,3 +140,5 @@ p { margin: 12px 20px 12px 0; }
     border-color: red;
     background-color: #ffe5e5;
 }
+
+.flash p { margin: 5px; }
