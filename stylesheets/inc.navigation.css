@@ -40,8 +40,6 @@
     -webkit-border-radius: 5px;
 }
 
-#nav a:hover { background-color: #626262; }
-
 /* Left/right floats */
 
 #nav > div { line-height: 2em; }
@@ -126,7 +124,7 @@
     background-color: transparent;
 }
 
-#nav_command_search_results li > a:hover { background-color: rgba(255, 255, 255, 0.05); }
+#nav_command_search_results li.focus > a { background-color: rgba(255, 255, 255, 0.05); }
 
 #nav_command_search_results:first-child > a {
     -moz-border-radius-topleft: 5px;
@@ -150,12 +148,12 @@
     text-transform: uppercase;
 }
 
-#nav_command_search_results li > a.factoid > span.type:after {
+#nav_command_search_results li.factoid > a > span.type:after {
     color: #ecd8ff;
     content: "factoid";
 }
 
-#nav_command_search_results li > a.snippet > span.type:after {
+#nav_command_search_results li.snippet > a > span.type:after {
     color: #cdef9d;
     content: "snippet";
 }

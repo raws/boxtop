@@ -4,7 +4,7 @@
 
 <h4>Welcome to the home of Wheaties, botfast of champions!</h4>
 
-<p>Wheaties is an IRC bot servicing various channels across multiple networks.</p>
+<p>Wheaties is a general-purpose IRC bot servicing various channels across multiple networks.</p>
 
 <h2>Where to find Wheaties</h2>
 
@@ -38,6 +38,6 @@
 
 <h2>A bit of history</h2>
 
-<p>The nick "Wheaties" is originally attributed to <b>Troll-man</b> of #DoB on GameSurge. The breakfast cereal genre was suggested by <b>Gafgarion</b> after I appealed to the channel for creative bot names. If you see IRC bots messily ravaging channels under nicknames such as Bonerbot or Masturbot, those are probably Wheaties in a testing configuration. (Or he has become sentient, in which case you shou&mdash;oh bugger.)</p>
+<p>The nick "Wheaties" is originally attributed to <b>Troll-man</b> of #DoB on GameSurge. The breakfast cereal genre was suggested by <b>Gafgarion</b> after Raws appealed to the channel for creative bot names. If you see IRC bots messily ravaging channels under nicknames such as Bonerbot or Masturbot, those are probably Wheaties in a testing configuration. (Or he has become sentient, in which case you shou&mdash;oh bugger.)</p>
 
 <?php $this->load->view('application/footer'); ?>

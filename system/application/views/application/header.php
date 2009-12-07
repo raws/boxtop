@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Wheaties</title>
+	<title>Wheaties<?php if (isset($title)) { echo " - {$title}"; } ?></title>
 	<link rel="stylesheet" href="/stylesheets/application.css" type="text/css" />
 	<script src="/javascripts/jquery/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/javascripts/jquery/jquery.ajaxify-0.4-min.js" type="text/javascript" charset="utf-8"></script>
@@ -22,7 +22,7 @@
 				<p>Commands</p>
 				
 				<div id="nav_command_search">
-					<form id="nav_command_search_form" method="post" action="/command/search" target="#nav_command_search_results">
+					<form id="nav_command_search_form" method="post" action="/search" target="#nav_command_search_results">
 						<input id="nav_command_search_query" class="placeholder" placeholder="Search" type="text" name="query" value="" autocomplete="off" />
 					</form>
 					

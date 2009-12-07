@@ -1,0 +1,88 @@
+#search_results > ol {
+    padding-left: 3%;
+    
+    list-style-type: none;
+}
+
+#search_results > ol > li {
+    width: 32%;
+    margin: 0 5px 5px 0;
+    float: left;
+}
+
+#search_results li > a {
+    display: block;
+    padding: 3px;
+    
+    color: #444;
+    font-size: 15px;
+    text-decoration: none;
+    line-height: 1.7em;
+    
+    border: 1px solid #ccc;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    background-color: #eee;
+}
+
+#search_results li > a span.type {
+    display: block;
+    width: 16px;
+    height: 16px;
+    float: left;
+    margin: 5px 12px 0 5px;
+    
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    line-height: 16px;
+    text-transform: uppercase;
+    
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+/* Factoid search result blocks (purple) */
+
+#search_results li.factoid > a {
+    border-color: rgba(176, 0, 250, 0.1);
+    background-color: rgba(176, 0, 250, 0.05);
+}
+#search_results li.factoid > a:hover {
+    border-color: rgba(176, 0, 250, 0.2);
+    background-color: rgba(176, 0, 250, 0.09);
+}
+#search_results li.factoid > a span.type:after { content: "f"; }
+#search_results li.factoid > a span.type { background-color: rgba(176, 0, 250, 0.35); }
+
+/* Snippet search result blocks (green) */
+
+#search_results li.snippet > a {
+    border-color: rgba(141, 239, 0, 0.2);
+    background-color: rgba(141, 239, 0, 0.1);
+}
+#search_results li.snippet > a:hover {
+    border-color: rgba(141, 239, 0, 0.35);
+    background-color: rgba(141, 239, 0, 0.2);
+}
+#search_results li.snippet > a span.type:after { content: "s"; }
+#search_results li.snippet > a span.type { background-color: rgba(141, 239, 0, 0.5); }
+
+/* Pagination */
+
+p.pagination {
+    display: block;
+    padding: 5px 10px;
+    margin: 15px 0 15px 0;
+    
+    color: #666;
+    background-color: #eee;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    text-align: center;
+}
+
+p.pagination span.group { margin-left: 15px; }
+p.pagination span.group:first-child { margin-left: 0; }
+
+p.pagination a { color: #888; }
