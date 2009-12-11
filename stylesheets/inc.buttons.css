@@ -1,3 +1,8 @@
+a.button.disabled {
+    cursor: default;
+    background-color: #969696;
+}
+
 a.button:after { padding-left: 7px; }
 
 /* Orange plus sign */
@@ -10,6 +15,12 @@ a.button.add:after {
 a.button.delete:after {
     content: "\2718";
     color: #ffa296;
+}
+
+/* Yellow pencil */
+a.button.edit:after {
+    content: "\270F";
+    color: #fff88b;
 }
 
 /* Purple left arrow */

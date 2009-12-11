@@ -17,9 +17,9 @@ $this->load->view('application/header');
 
 <p>Log in using your Wheaties account.</p>
 
-<?=form_open('login', array('id' => 'login_form'));?>
-	<p><?=form_label('Username', 'username') . form_input('username', '');?></p>
-	<p><?=form_label('Password', 'password') . form_password('password', '');?></p>
+<form id="login_form" method="post" action="/login">
+	<p><label for="username">Username</label><input type="text" name="username" value="<?=set_value('username');?>" /></p>
+	<p><label for="password">Password</label><input type="password" name="password" value="<?=set_value('password');?>" /></p>
 	<a id="login_button" class="button save form" href="#">Log in</a>
 </form>
 

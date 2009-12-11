@@ -58,18 +58,18 @@ class Auth {
             return TRUE;
         } else {
 				if ($redirect) {
-	            if ($effective_access > 0) {
-	                // User is logged in, but does not have sufficient access.
-	                $this->ci->session->set_flashdata('error', "Oops! You do not have the appropriate access to do that.");
+    	            if ($effective_access > 0) {
+    	                // User is logged in, but does not have sufficient access.
+    	                $this->ci->session->set_flashdata('error', "Oops! You do not have the appropriate access to do that.");
                 
-	                redirect();
-	            } else {
-	                // User is not logged in.
-	                $this->ci->session->set_flashdata('return', $this->ci->uri->uri_string());
-	                $this->ci->session->set_flashdata('error', "Oops! You must log in to do that.");
+    	                redirect();
+    	            } else {
+    	                // User is not logged in.
+    	                $this->ci->session->set_flashdata('return', $this->ci->uri->uri_string());
+    	                $this->ci->session->set_flashdata('error', "Oops! You must log in to do that.");
                 
-	                redirect('login');
-	            }
+    	                redirect('login');
+    	            }
 				}
             
             return FALSE;

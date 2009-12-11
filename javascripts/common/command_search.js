@@ -31,8 +31,12 @@ $(function() {
 		console.log(e.keyCode);
 		if (e.keyCode == 13) { // Return or enter key.
 			// Submit non-ajax search.
-			window.location.href = $("#nav_command_search_form").attr("action") +
-				"/" + $("#nav_command_search_query").val();
+			if ($("#nav_command_search_results li.focus").size() > 0) {
+				window.location.href = $("#nav_command_search_results li.focus:first > a").attr("href");
+			} else {
+				window.location.href = $("#nav_command_search_form").attr("action") +
+					"/" + $("#nav_command_search_query").val();
+			}
 		} else if (e.keyCode == 27) { // Escape key.
 			// Kill focus on command search.
 			$("#nav_command_search_query").val('').blur();

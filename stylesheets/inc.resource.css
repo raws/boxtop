@@ -1,0 +1,114 @@
+#left_column {
+    width: 75%;
+    float: left;
+}
+
+#right_column {
+    width: 23%;
+    float: right;
+}
+
+#right_column h3, #right_column h4, #right_column p { margin: 10px 0; }
+#right_column h3 { font-size: 14px; }
+#right_column h4, #right_column p { font-size: 12px; }
+#right_column code {
+    display: block;
+    padding: 10px;
+    
+    background-color: #f3f3f3;
+}
+
+#tips { display: none; }
+
+#definitions {
+    padding: 0;
+    
+    list-style: none;
+}
+
+#definitions > li { margin-bottom: 15px; }
+
+li#proto_definition { display: none; }
+
+.definition > .title {
+    height: 15px;
+    display: block;
+    padding: 0 7px;
+    
+    position: relative;
+    
+    background-color: #e4e4e4;
+    border: 1px solid #e4e4e4;
+    -moz-border-radius-topleft: 10px;
+    -webkit-border-top-left-radius: 10px;
+    -moz-border-radius-topright: 10px;
+    -webkit-border-top-right-radius: 10px;
+}
+
+li.focus .definition > .title {
+    background-color: #d7f8ff;
+    border-color: #d7f8ff;
+}
+    
+    .title .handle {
+        width: 100%;
+        height: 15px;
+        
+        cursor: move;
+        background: url(/images/handle.png) repeat-x;
+        opacity: 0.15;
+        -moz-opacity: 0.15;
+    }
+    
+    li.focus .definition > .title .handle {
+        background-image: url(/images/handle_focus.png);
+        opacity: 0.25;
+        -moz-opacity: 0.25;
+    }
+
+    .title a.delete {
+        width: 20px;
+        height: 15px;
+        display: block;
+        
+        position: absolute;
+        top: 0;
+        right: 3px;
+        
+        cursor: pointer;
+        background: #e4e4e4 url(/images/delete.png) no-repeat top right;
+    }
+    
+    .title a.delete:hover, .title a.delete:active { background-position: bottom right; }
+    
+    li.focus .definition > .title a.delete {
+        background-color: #d7f8ff;
+        background-image: url(/images/delete_focus.png);
+    }
+
+.definition > .content {
+    padding: 5px;
+    
+    background-color: #f3f3f3;
+    border: 1px solid #e4e4e4;
+    border-top: none;
+    -moz-border-radius-bottomleft: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+}
+
+li.focus .definition > .content {
+    background-color: #e9fafe;
+    border-color: #d7f8ff;
+}
+
+    .content textarea {
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        
+        background-color: transparent;
+        border: none;
+        outline: none;
+    }

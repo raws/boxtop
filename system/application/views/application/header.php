@@ -4,8 +4,11 @@
 	<link rel="stylesheet" href="/stylesheets/application.css" type="text/css" />
 	<script src="/javascripts/jquery/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/javascripts/jquery/jquery.ajaxify-0.4-min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/javascripts/jquery/jquery.ba-bbq.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/javascripts/jquery/jquery.placeholder.js" type="text/javascript" charset="utf-8"></script>
 	<script src="/javascripts/common/command_search.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/javascripts/common/disabled_buttons.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/javascripts/common/toggle_buttons.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
 
@@ -32,7 +35,7 @@
 				</div>
 				
 				<?php if ($this->auth->authorize('helper', FALSE)): ?>
-					<a href="/snippets/new">New Snippet</a>
+					<a href="/snippet/new">New Snippet</a>
 				<?php endif; ?>
 			</div>
 		</div>
@@ -46,7 +49,7 @@
 					<a href="/logout">Log out</a>
 				<?php else: ?>
 					<p class="plain">Guest</p>
-					<a href="/login">Log in</a>
+					<a href="/login">Log In</a>
 					<a href="/register">Register</a>
 				<?php endif; ?>
 			</div>
