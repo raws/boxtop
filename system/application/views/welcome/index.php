@@ -4,7 +4,7 @@
 
 <h4>Welcome to the home of Wheaties, botfast of champions!</h4>
 
-<p>Wheaties is a general-purpose IRC bot servicing various channels across multiple networks.</p>
+<p>Wheaties is a general-purpose IRC bot servicing channels across several networks.</p>
 
 <h2>Where to find Wheaties</h2>
 

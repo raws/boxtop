@@ -52,5 +52,7 @@ $route['search/(:any)'] = 'help/search/$1';
 
 $route['factoid/(:num)'] = 'factoid/view/$1';
 
+$route['snippet/(:num)'] = 'snippet/view/$1';
+
 /* End of file routes.php */
 /* Location: ./system/application/config/routes.php */

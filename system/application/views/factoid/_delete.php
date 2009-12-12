@@ -1,3 +1,3 @@
-<h2>Deleted "<?=$factoid->name;?>"</h2>
+<h2>Factoid deleted</h2>
 
-<p>The factoid and all of its associated definitions have been deleted.</p>
+<p>The factoid "<?=$factoid->name;?>" and all of its associated definitions have been deleted.</p>

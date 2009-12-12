@@ -35,7 +35,7 @@
 				</div>
 				
 				<?php if ($this->auth->authorize('helper', FALSE)): ?>
-					<a href="/snippet/new">New Snippet</a>
+					<a href="/snippet/create">New Snippet</a>
 				<?php endif; ?>
 			</div>
 		</div>

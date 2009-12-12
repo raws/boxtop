@@ -1,4 +1,4 @@
-<?php $this->load->view('application/header'); ?>
+<?php $this->load->view('application/header', array('title' => 'Register')); ?>
 
 <script type="text/javascript" charset="utf-8">
 	$(function() {

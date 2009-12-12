@@ -8,27 +8,29 @@ class Factoid extends Controller {
     function view($id) {
         $query = $this->db->get_where(Factoid::factoids_table, array('id' => $id), 1);
         
-        if ($query->num_rows() <= 0) {
-            return $this->load->view('factoid/404', array('id' => $id));
+        if ($query->num_rows() > 0) {
+            $factoid = $query->row();
+            $definitions = $this->db->order_by('id', 'asc')->
+                get_where(Factoid::definitions_table, array('factoid_id' => $factoid->id))->result();
+
+            $data = array(
+                    'factoid' => $factoid,
+                    'definitions' => $definitions
+                );
+
+            $this->load->view('factoid/view', $data);
+        } else {
+            $data = array(
+                    'header' => 'Factoid not found',
+                    'message' => "Oops! Factoid #{$id} does not exist!"
+                );
+            
+            $this->load->view('application/error', $data);
         }
-        
-        $factoid = $query->row();
-        $definitions = $this->db->order_by('id', 'asc')->
-            get_where(Factoid::definitions_table, array('factoid_id' => $factoid->id))->result();
-        
-        $data = array(
-                'factoid' => $factoid,
-                'definitions' => $definitions
-            );
-        
-        $this->load->view('factoid/view', $data);
     }
     
     function edit($id) {
-        if ($this->auth->logged_out()) {
-            echo '';
-            return;
-        }
+        $this->auth->authorize('logged_in');
         
         $query = $this->db->get_where(Factoid::factoids_table, array('id' => $id), 1);
         
@@ -49,6 +51,8 @@ class Factoid extends Controller {
     }
     
     function save() {
+        $this->auth->authorize('logged_in');
+        
         $id = $this->input->post('id');
         $definitions = $this->input->post('definitions');
         
@@ -69,11 +73,18 @@ class Factoid extends Controller {
         if ($this->db->trans_status()) {
             $this->edit($id);
         } else {
-            echo "Oops! Something went wrong while attempting to save factoid #{$id}!";
+            $data = array(
+                    'header' => 'Something went wrong',
+                    'message' => "Oops! An error occurred while attempting to save the factoid."
+                );
+
+            $this->load->view('application/error', $data);
         }
     }
     
     function delete($id) {
+        $this->auth->authorize('logged_in');
+        
         $query = $this->db->get_where(Factoid::factoids_table, array('id' => $id));
         
         if ($query->num_rows() > 0) {
@@ -87,10 +98,20 @@ class Factoid extends Controller {
             if ($this->db->trans_status()) {
                 $this->load->view('factoid/_delete', array('factoid' => $factoid));
             } else {
-                echo "Oops! Something went wrong while attempting to delete factoid #{$id}!";
+                $data = array(
+                        'header' => 'Something went wrong',
+                        'message' => "Oops! An error occurred while attempting to delete the factoid."
+                    );
+
+                $this->load->view('application/error', $data);
             }
         } else {
-            echo "Oops! Factoid #{$id} does not exist!";
+            $data = array(
+                    'header' => 'Factoid not found',
+                    'message' => "Oops! Factoid #{$id} does not exist!"
+                );
+            
+            $this->load->view('application/error', $data);
         }
     }
        

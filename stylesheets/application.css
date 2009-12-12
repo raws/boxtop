@@ -127,7 +127,7 @@ a.button.form {
     margin-left: 110px;
 }
 
-code, form .code {
+code, .code {
     font-family: "DejaVu Sans Mono", "Monaco", "Andale Mono", "Courier New", Courier, monospace;
     font-size: 12px;
     line-height: 1.5em;
@@ -157,3 +157,25 @@ code, form .code {
 }
 
 .flash p { margin: 5px; }
+
+/* Content columns */
+
+#left_column {
+    width: 75%;
+    float: left;
+}
+
+#right_column {
+    width: 23%;
+    float: right;
+}
+
+#right_column h3, #right_column h4, #right_column p { margin: 10px 0; }
+#right_column h3 { font-size: 14px; }
+#right_column h4, #right_column p { font-size: 12px; }
+#right_column code {
+    display: block;
+    padding: 10px;
+    
+    background-color: #f3f3f3;
+}

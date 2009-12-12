@@ -1,6 +1,6 @@
 <?php
 $this->load->helper('form');
-$this->load->view('application/header');
+$this->load->view('application/header', array('title' => 'Log In'));
 ?>
 
 <script type="text/javascript" charset="utf-8">
