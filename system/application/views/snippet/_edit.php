@@ -23,7 +23,7 @@
 	<p>By <b><?=$created_by->username;?></b> on <?=date('F j, Y \a\t g:i a', strtotime($snippet->created_at));?>.</p>
 	
 	<h3>Updated</h3>
-	<p>On <?=date('F j, Y \a\t g:i a', strtotime($snippet->updated_at));?>.</p>
+	<p id="updated_at">By <b><?=$updated_by->username;?></b> on <?=date('F j, Y \a\t g:i a', strtotime($snippet->updated_at));?>.</p>
 	
 	<h2>Tips <a class="button toggle" href="#" target="#tips">Show</a></h2>
 	

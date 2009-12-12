@@ -10,10 +10,12 @@ class Snippet extends Controller {
 	    if ($query->num_rows() > 0) {
 	        $snippet = $query->row();
 	        $created_by = $this->db->get_where('session_accounts', array('id' => $snippet->created_by))->row();
+	        $updated_by = $this->db->get_where('session_accounts', array('id' => $snippet->updated_by))->row();
 	        
 	        $data = array(
 	                'snippet' => $snippet,
-	                'created_by' => $created_by
+	                'created_by' => $created_by,
+	                'updated_by' => $updated_by
 	            );
 	        
 	        $this->load->view('snippet/view', $data);
@@ -36,8 +38,10 @@ class Snippet extends Controller {
 	        $this->load->view('snippet/create');
 	    } else {
 	        $now = date('Y-m-d H:i:s');
+	        $account_id = $this->auth->account()->id;
 	        $data = array(
-	                'created_by' => $this->auth->account()->id,
+	                'created_by' => $account_id,
+	                'updated_by' => $account_id,
 	                'name' => $this->input->post('name'),
 	                'arguments' => $this->input->post('arguments'),
 	                'body' => $this->input->post('body'),
@@ -61,10 +65,12 @@ class Snippet extends Controller {
 	    if ($query->num_rows() > 0) {
 	        $snippet = $query->row();
 	        $created_by = $this->db->get_where('session_accounts', array('id' => $snippet->created_by))->row();
+	        $updated_by = $this->db->get_where('session_accounts', array('id' => $snippet->updated_by))->row();
 	        
 	        $data = array(
 	                'snippet' => $snippet,
-	                'created_by' => $created_by
+	                'created_by' => $created_by,
+	                'updated_by' => $updated_by
 	            );
 	        
 	        $this->load->view('snippet/_edit', $data);
@@ -92,13 +98,15 @@ class Snippet extends Controller {
 	            
 	            $data = array(
 	                    'snippet' => $snippet,
-	                    'created_by' => $this->db->get_where('session_accounts', array('id' => $snippet->created_by))->row()
+	                    'created_by' => $this->db->get_where('session_accounts', array('id' => $snippet->created_by))->row(),
+	                    'updated_by' => $this->db->get_where('session_accounts', array('id' => $snippet->updated_by))->row()
 	                );
 	            
     	        $this->load->view('snippet/_edit', $data);
     	    } else {
     	        $now = date('Y-m-d H:i:s');
     	        $data = array(
+    	                'updated_by' => $this->auth->account()->id,
     	                'name' => $this->input->post('name'),
     	                'arguments' => $this->input->post('arguments'),
     	                'body' => $this->input->post('body'),

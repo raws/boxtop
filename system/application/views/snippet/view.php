@@ -3,6 +3,7 @@ $this->load->helper('form');
 $this->load->view('snippet/_header', array('title' => $snippet->name));
 ?>
 
+<script src="/javascripts/jquery/jquery-ui-1.7.2.custom.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="/javascripts/jquery/jquery.elastic.js" type="text/javascript" charset="utf-8"></script>
 <script src="/javascripts/snippet/view.js" type="text/javascript" charset="utf-8"></script>
 
@@ -36,7 +37,7 @@ $this->load->view('snippet/_header', array('title' => $snippet->name));
 		<p>By <b><?=$created_by->username;?></b> on <?=date('F j, Y \a\t g:i a', strtotime($snippet->created_at));?>.</p>
 
 		<h3>Updated</h3>
-		<p>On <?=date('F j, Y \a\t g:i a', strtotime($snippet->updated_at));?>.</p>
+		<p>By <b><?=$updated_by->username;?></b> on <?=date('F j, Y \a\t g:i a', strtotime($snippet->updated_at));?>.</p>
 	</div>
 </div>
 

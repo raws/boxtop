@@ -15,7 +15,7 @@ $(function() {
 		var form = $("#edit_form");
 		$.post(form.attr("action"), form.serialize(), function(data) {
 			$("#snippet").html(data);
-			// $("#left_column").effect("highlight");
+			$("#updated_at").effect("highlight", {}, "slow");
 			$("#right_column a.button").removeClass("disabled");
 		});
 		
