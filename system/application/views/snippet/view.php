@@ -19,7 +19,7 @@ $this->load->view('snippet/_header', array('title' => $snippet->name));
 		</div>
 
 		<div id="body" class="code">
-			<?=$snippet->body;?>
+			<pre><?=$snippet->body;?></pre>
 		</div>
 	</div>
 
