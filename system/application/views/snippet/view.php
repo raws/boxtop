@@ -3,9 +3,18 @@ $this->load->helper('form');
 $this->load->view('snippet/_header', array('title' => $snippet->name));
 ?>
 
+<style type="text/css" media="screen">
+	@import url("/stylesheets/inc.highlight.github.css");
+</style>
+
 <script src="/javascripts/jquery/jquery-ui-1.7.2.custom.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="/javascripts/jquery/jquery.elastic.js" type="text/javascript" charset="utf-8"></script>
 <script src="/javascripts/snippet/view.js" type="text/javascript" charset="utf-8"></script>
+<script src="/javascripts/common/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+	hljs.tabReplace = '  ';
+	hljs.initHighlightingOnLoad('ruby');
+</script>
 
 <div id="snippet">
 	<div id="left_column">
@@ -19,7 +28,7 @@ $this->load->view('snippet/_header', array('title' => $snippet->name));
 		</div>
 
 		<div id="body" class="code">
-			<pre><?=$snippet->body;?></pre>
+			<pre><code><?=$snippet->body;?></code></pre>
 		</div>
 	</div>
 
