@@ -18,6 +18,7 @@
 	<a id="save_button" class="button save" href="#edit">Save</a>
 	<a id="revert_button" class="button revert" href="/snippet/edit/<?=$snippet->id;?>" target="#snippet">Revert</a>
 	<a id="delete_button" class="button delete" href="/snippet/delete/<?=$snippet->id;?>" target="#snippet">Delete</a>
+	<a id="view_button" class="button done" href="/snippet/<?=$snippet->id;?>">Done</a>
 	
 	<h3 style="margin-top: 20px;">Created</h3>
 	<p>By <b><?=$created_by->username;?></b> on <?=date('F j, Y \a\t g:i a', strtotime($snippet->created_at));?>.</p>

@@ -35,6 +35,7 @@
 			<a id="save_button" class="button save" href="#edit">Save</a>
 			<a id="revert_button" class="button revert" href="/factoid/edit/<?=$factoid->id;?>" target="#factoid">Revert</a>
 			<a id="delete_button" class="button delete" href="/factoid/delete/<?=$factoid->id;?>" target="#factoid">Delete</a>
+			<a id="view_button" class="button done" href="/factoid/<?=$factoid->id;?>">Done</a>
 		</p>
 		
 		<h3 style="margin-top: 25px;">Definitions</h3>
