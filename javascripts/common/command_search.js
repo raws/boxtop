@@ -28,7 +28,6 @@ $(function() {
 	
 	// Command search keyboard controls.
 	$("#nav_command_search_query").keydown(function(e) {
-		console.log(e.keyCode);
 		if (e.keyCode == 13) { // Return or enter key.
 			// Submit non-ajax search.
 			if ($("#nav_command_search_results li.focus").size() > 0) {
