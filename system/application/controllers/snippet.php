@@ -44,6 +44,7 @@ class Snippet extends Controller {
 	                'updated_by' => $account_id,
 	                'name' => $this->input->post('name'),
 	                'arguments' => $this->input->post('arguments'),
+	                'parser' => $this->input->post('parser'),
 	                'body' => $this->input->post('body'),
 	                'created_at' => $now,
 	                'updated_at' => $now
@@ -109,6 +110,7 @@ class Snippet extends Controller {
     	                'updated_by' => $this->auth->account()->id,
     	                'name' => $this->input->post('name'),
     	                'arguments' => $this->input->post('arguments'),
+    	                'parser' => $this->input->post('parser'),
     	                'body' => $this->input->post('body'),
     	                'updated_at' => $now
     	            );

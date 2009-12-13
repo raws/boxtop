@@ -7,6 +7,14 @@
 	<span class="paren">(</span>
 	<input class="code" type="text" name="arguments" size="1" autocomplete="off" value="<?=isset($snippet)?$snippet->arguments:set_value('arguments');?>" />
 	<span class="paren">)</span>
+	<span><?php
+	$options = array(
+			'default' => 'Default (Ruby style)',
+			'string' => 'Combine into string',
+			'split' => 'Split into array'
+		);
+	echo form_dropdown('parser', $options, isset($snippet) ? $snippet->parser : 'default');
+	?></span>
 </div>
 
 <div id="body">

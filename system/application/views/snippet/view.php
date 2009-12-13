@@ -25,9 +25,17 @@ $this->load->view('snippet/_header', array('title' => $snippet->name));
 			<span class="paren">(</span>
 			<span class="arguments code"><?=$snippet->arguments;?></span>
 			<span class="paren">)</span>
+			<span><?php
+			$options = array(
+					'default' => 'Default (Ruby style)',
+					'string' => 'Combine into string',
+					'split' => 'Split into array'
+				);
+			echo form_dropdown('parser', $options, $snippet->parser, 'disabled="disabled"');
+			?></span>
 		</div>
 
-		<div id="body" class="code">
+		<div id="body" class="code" style="overflow: auto;">
 			<pre><code><?=$snippet->body;?></code></pre>
 		</div>
 	</div>
