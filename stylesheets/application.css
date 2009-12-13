@@ -129,7 +129,7 @@ a.button.form {
     margin-left: 110px;
 }
 
-code, pre, .code {
+code, pre, .code, .contains_code span {
     font-family: "DejaVu Sans Mono", "Monaco", "Andale Mono", "Courier New", Courier, monospace;
     font-size: 12px;
     line-height: 1.5em;

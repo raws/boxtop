@@ -15,16 +15,16 @@ pre .comment, pre .template_comment, pre .diff .header, pre .javadoc {
     font-style: italic
 }
 
-pre .keyword, pre .css .rule .keyword, pre .winutils, pre .javascript .title, pre .lisp .title, pre .subst {
+pre .keyword, pre .css .rule .keyword, pre .winutils, pre .javascript .title, pre .lisp .title, pre .subst, #right_column .keyword {
     color: #000;
     font-weight: bold
 }
 
-pre .number, pre .hexcolor {
+pre .number, pre .hexcolor, #right_column .number {
     color: #40a070
 }
 
-pre .string, pre .attribute .value, pre .phpdoc {
+pre .string, pre .attribute .value, pre .phpdoc, #right_column .string {
     color: #d14
 }
 
@@ -47,7 +47,7 @@ pre .tag, pre .css .keyword, pre .html .keyword, pre .tag .title, pre .django .t
     font-weight: normal
 }
 
-pre .attribute, pre .variable, pre .instancevar, pre .lisp .body {
+pre .attribute, pre .variable, pre .instancevar, pre .lisp .body, #right_column .variable {
     color: #008080
 }
 
@@ -55,12 +55,12 @@ pre .regexp {
     color: #009926
 }
 
-pre .class {
+pre .class, #right_column .class {
     color: #458;
     font-weight: bold
 }
 
-pre .symbol, pre .lisp .keyword {
+pre .symbol, pre .lisp .keyword, #right_column .symbol {
     color: #990073
 }
 
