@@ -163,12 +163,12 @@ code, pre, .code, .contains_code span {
 /* Content columns */
 
 #left_column {
-    width: 75%;
+    width: 70%;
     float: left;
 }
 
 #right_column {
-    width: 23%;
+    width: 28%;
     float: right;
 }
 
