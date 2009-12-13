@@ -29,7 +29,8 @@ $this->load->view('snippet/_header', array('title' => $snippet->name));
 			$options = array(
 					'default' => 'Default (Ruby style)',
 					'string' => 'Combine into string',
-					'split' => 'Split into array'
+					'split' => 'Split into array',
+					'block' => 'Pass as block'
 				);
 			echo form_dropdown('parser', $options, $snippet->parser, 'disabled="disabled"');
 			?></span>

@@ -11,7 +11,8 @@
 	$options = array(
 			'default' => 'Default (Ruby style)',
 			'string' => 'Combine into string',
-			'split' => 'Split into array'
+			'split' => 'Split into array',
+			'block' => 'Pass as block'
 		);
 	echo form_dropdown('parser', $options, isset($snippet) ? $snippet->parser : 'default');
 	?></span>
