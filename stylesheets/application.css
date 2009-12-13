@@ -134,7 +134,7 @@ code, pre, .code, .contains_code span {
     font-size: 12px;
     line-height: 1.5em;
     
-    overflow: hidden;
+    overflow: auto;
 }
 
 /* Flash data */
