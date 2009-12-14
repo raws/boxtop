@@ -26,7 +26,7 @@ class Help extends Controller {
             order_by('name', 'asc')->get('rum_snippets')->result();
         
         $results = array_merge($factoids, $snippets);
-        usort($results, array($this, 'search_autocomplete_sort'));
+        usort($results, array($this, '_sort_commands'));
         $total_results = count($results);
         
         $data = array(
@@ -50,7 +50,39 @@ class Help extends Controller {
 	    }
     }
     
-    function search_autocomplete_sort($a, $b) {
+    function all($page = '1', $type = 'both') {
+        $limit = 100;
+        $offset = ($page - 1) * $limit;
+        $results = array();
+        
+        if ($type == 'both' || $type == 'factoids') {
+            $query = $this->db->order_by('name', 'asc')->select('id, name')->get('infobot_factoids');
+            $results = array_merge($results, $query->result());
+        }
+        
+        if ($type == 'both' || $type == 'snippets') {
+            $query = $this->db->order_by('name', 'asc')->select('id, name, arguments')->get('rum_snippets');
+            $results = array_merge($results, $query->result());
+        }
+        
+        usort($results, array($this, '_sort_commands'));
+        $total = count($results);
+        
+        $data = array(
+                'results' => array_slice($results, $offset, $limit),
+                'total' => $total,
+                'limit' => $limit,
+                'offset' => $offset,
+                'page' => $page,
+                'pages' => max(1, ceil($total / $limit)),
+                'prev_page' => ($page > 1),
+                'next_page' => (($offset + $limit) < $total)
+            );
+        
+        $this->load->view('help/list', $data);
+    }
+    
+    function _sort_commands($a, $b) {
         return strcasecmp($a->name, $b->name);
     }
     

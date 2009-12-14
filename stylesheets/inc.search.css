@@ -71,6 +71,15 @@
 #search_results li.snippet > a span.type:after { content: "s"; }
 #search_results li.snippet > a span.type { background-color: rgba(141, 239, 0, 0.5); }
 
+/* Command list search results table */
+#search_results_table {
+    width: 100%;
+}
+
+#search_results_table td {
+    border-bottom: 1px solid #ccc;
+}
+
 /* Pagination */
 
 p.pagination {

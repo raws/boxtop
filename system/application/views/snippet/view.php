@@ -52,10 +52,10 @@ $this->load->view('snippet/_header', array('title' => $snippet->name));
 		<?php endif; ?>
 		
 		<h3 style="margin-top: 20px;">Created</h3>
-		<p>By <b><?=$created_by->username;?></b> on <?=date('F j, Y \a\t g:i a', strtotime($snippet->created_at));?>.</p>
+		<p>By <b><?=$created_by == null ? 'someone' : $created_by->username;?></b> on <?=date('F j, Y \a\t g:i a', strtotime($snippet->created_at));?>.</p>
 
 		<h3>Updated</h3>
-		<p>By <b><?=$updated_by->username;?></b> on <?=date('F j, Y \a\t g:i a', strtotime($snippet->updated_at));?>.</p>
+		<p>By <b><?=$updated_by == null ? 'someone' : $updated_by->username;?></b> on <?=date('F j, Y \a\t g:i a', strtotime($snippet->updated_at));?>.</p>
 	</div>
 </div>
 

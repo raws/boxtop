@@ -48,10 +48,17 @@ $route['logout'] = 'session/logout';
 $route['register'] = 'session/register';
 
 $route['search'] = 'help/search';
+$route['search/all'] = 'help/all';
+$route['search/all/(:num)'] = 'help/all/$1';
+$route['search/factoids'] = 'help/all/1/factoids';
+$route['search/factoids/(:num)'] = 'help/all/$1/factoids';
+$route['search/snippets'] = 'help/all/1/snippets';
+$route['search/snippets/(:num)'] = 'help/all/$1/snippets';
 $route['search/(:any)'] = 'help/search/$1';
 
 $route['factoid/(:num)'] = 'factoid/view/$1';
 
+$route['snippet/list'] = 'help/list/1/snippets';
 $route['snippet/(:num)'] = 'snippet/view/$1';
 
 /* End of file routes.php */
