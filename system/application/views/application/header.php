@@ -34,6 +34,9 @@
 					</div>
 				</div>
 				
+				<a href="/search/all">All</a>
+				<a href="/search/factoids">All Factoids</a>
+				<a href="/search/snippets">All Snippets</a>
 				<?php if ($this->auth->authorize('helper', FALSE)): ?>
 					<a href="/snippet/create">New Snippet</a>
 				<?php endif; ?>
