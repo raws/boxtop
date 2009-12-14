@@ -18,7 +18,6 @@
 	<li><b>Freenode</b>
 		<ul>
 			<li><a href="irc://irc.freenode.net/cerealbot">#cerealbot</a></li>
-			<li><a href="irc://irc.freenode.net/wowheadot">#wowheadot</a></li>
 		</ul></li>
 	<li><b>GameSurge</b>
 		<ul>
